@@ -1,39 +1,25 @@
 {
   "characters": [
     {
-      "name": "SpongeBob",
-      "occupation": "Lives Under The Sea",
-      "weapon": "Pineapple",
-      "cartoon": false,
-      "id": 3
+      "name": "Chanquete2",
+      "occupation": "Pescador2",
+      "weapon": "Arpón2",
+      "cartoon": "True",
+      "id": 1
     },
     {
-      "name": "Chanquete",
-      "occupation": "Fisher",
-      "weapon": "Arpón",
+      "name": "Chanquete3",
+      "occupation": "Pescador2",
+      "weapon": "Arpón2",
+      "cartoon": "True",
+      "id": 2
+    },
+    {
+      "name": "Chanquete3",
+      "occupation": "Pescador2",
+      "weapon": "Arpón2",
       "cartoon": "False",
-      "id": 5
-    },
-    {
-      "name": "Jhonny Bravo",
-      "occupation": "huha",
-      "weapon": "hair",
-      "cartoon": false,
-      "id": 6
-    },
-    {
-      "name": "Mariano Rajoy",
-      "occupation": "Monologista",
-      "weapon": "Refranes",
-      "cartoon": false,
-      "id": 11
-    },
-    {
-      "name": "txanquete",
-      "occupation": "pescador",
-      "weapon": "Pineapple",
-      "cartoon": false,
-      "id": 12
+      "id": 3
     }
   ]
 }

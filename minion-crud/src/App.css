@@ -92,8 +92,9 @@ b {
 }
 
 .form-container {
-  display: inline-block;
-  width: 49%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
   margin: 30px auto 0;
   vertical-align: top;
 }
@@ -120,4 +121,8 @@ b {
 
 .char {
   color: black;
+}
+
+.eachChar {
+  width: 100%;
 }

@@ -32,10 +32,8 @@ function Character({
     });
   };
 
-  console.log(data);
-
   return (
-    <div>
+    <div className="eachChar">
       {editing ? (
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
@@ -54,6 +52,12 @@ function Character({
             type="text"
             name="weapon"
             value={data.weapon}
+            onChange={handleChange}
+          ></input>
+          <input
+            type="text"
+            name="image"
+            value={data.image}
             onChange={handleChange}
           ></input>
           <select

@@ -12,6 +12,7 @@ function CharList() {
     weapon: "",
     cartoon: false,
   });
+
   const getData = async () => {
     try {
       const response = await axios.get(API_URL);
@@ -86,42 +87,57 @@ function CharList() {
 
   return (
     <>
-      <h1>Characters:</h1>
-      <form
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-        ></input>
-        <input
-          type="text"
-          name="occupation"
-          value={occupation}
-          onChange={handleChange}
-        ></input>
-        <input
-          type="text"
-          name="weapon"
-          value={weapon}
-          onChange={handleChange}
-        ></input>
-        <select
-          type="text"
-          name="cartoon"
-          value={cartoon}
-          onChange={handleChange}
+      <section className="form-container">
+        <h2>New Character</h2>
+        <form
+          className="character-form"
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
         >
-          <option>True</option>
-          <option>False</option>
-        </select>
-        <button type="submit">Crear</button>
-      </form>
-      {char.length ? displayChar() : <p>No quedan personajes</p>}
+          <div className="field">
+            <label htmlFor="name">Name: </label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="field">
+            <label htmlFor="occupation">Occupation: </label>
+            <input
+              type="text"
+              name="occupation"
+              value={occupation}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="field">
+            <label htmlFor="weapon">Weapon: </label>
+            <input
+              type="text"
+              name="weapon"
+              value={weapon}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="field">
+            <label htmlFor="cartoon">Is a Cartoon: </label>
+            <select
+              type="text"
+              name="cartoon"
+              value={cartoon}
+              onChange={handleChange}
+            >
+              <option>True</option>
+              <option>False</option>
+            </select>
+          </div>
+          <button type="submit">Crear</button>
+        </form>
+      </section>
+      {char.length ? displayChar() : <p>No quedan personajes en la BBDD</p>}
     </>
   );
 }
