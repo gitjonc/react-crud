@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Character from "./Character";
 
-const API_URL = "http://localhost:8000/characters";
+const FAKE_API_URL = "http://localhost:8000/characters";
 
 function CharList() {
   const [char, setChar] = useState([]);
@@ -15,10 +15,10 @@ function CharList() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(FAKE_API_URL);
       setChar(response.data);
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
     }
   };
   useEffect(() => {
@@ -27,10 +27,9 @@ function CharList() {
 
   const displayChar = () => {
     return char.map((character) => (
-      <div className="container">
+      <div className="container" key={character.id}>
         <div className="character-container">
           <Character
-            key={character.id}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
             {...character}
@@ -40,19 +39,21 @@ function CharList() {
     ));
   };
 
-  // const cleanInputs = () => {
-  //   setName (""),
-  //   setOccupation (""),
-  //   setWeapon (""),
-  //   setCartoon (false)
-  // };
+  const cleanInputs = () => {
+    setData({
+      name: "",
+      occupation: "",
+      weapon: "",
+      cartoon: false,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(API_URL, data);
+      await axios.post(FAKE_API_URL, data);
       getData();
-      // cleanInputs();
+      cleanInputs();
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +68,7 @@ function CharList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_URL}/${id}`);
+      await axios.delete(`${FAKE_API_URL}/${id}`);
       getData();
     } catch (error) {
       console.log(error);
@@ -76,7 +77,7 @@ function CharList() {
 
   const handleEdit = async (id, data) => {
     try {
-      await axios.put(`${API_URL}/${id}`, char);
+      await axios.put(`${FAKE_API_URL}/${id}`, data);
       getData();
     } catch (error) {
       console.log(error);
@@ -84,7 +85,6 @@ function CharList() {
   };
 
   const { name, occupation, weapon, cartoon } = data;
-
   return (
     <>
       <section className="form-container">
@@ -100,7 +100,7 @@ function CharList() {
             <input
               type="text"
               name="name"
-              value={name}
+              value={data.name}
               onChange={handleChange}
             ></input>
           </div>
@@ -109,7 +109,7 @@ function CharList() {
             <input
               type="text"
               name="occupation"
-              value={occupation}
+              value={data.occupation}
               onChange={handleChange}
             ></input>
           </div>
@@ -118,23 +118,25 @@ function CharList() {
             <input
               type="text"
               name="weapon"
-              value={weapon}
+              value={data.weapon}
               onChange={handleChange}
             ></input>
           </div>
           <div className="field">
             <label htmlFor="cartoon">Is a Cartoon: </label>
             <select
+              required
               type="text"
               name="cartoon"
-              value={cartoon}
+              value={data.cartoon}
               onChange={handleChange}
             >
-              <option>True</option>
+              <option hidden>--Choose an option--</option>
               <option>False</option>
+              <option>True</option>
             </select>
           </div>
-          <button type="submit">Crear</button>
+          <button type="submit">Create</button>
         </form>
       </section>
       {char.length ? displayChar() : <p>No quedan personajes en la BBDD</p>}

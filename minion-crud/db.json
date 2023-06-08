@@ -1,25 +1,18 @@
 {
   "characters": [
     {
-      "name": "Chanquete2",
-      "occupation": "Pescador2",
-      "weapon": "Arpón2",
-      "cartoon": "True",
+      "name": "Chanquete",
+      "occupation": "Percador",
+      "weapon": "Arpón",
+      "cartoon": "False",
       "id": 1
     },
     {
-      "name": "Chanquete3",
-      "occupation": "Pescador2",
-      "weapon": "Arpón2",
-      "cartoon": "True",
-      "id": 2
-    },
-    {
-      "name": "Chanquete3",
-      "occupation": "Pescador2",
-      "weapon": "Arpón2",
+      "name": "Chanquete",
+      "occupation": "Fisher",
+      "weapon": "dedede",
       "cartoon": "False",
-      "id": 3
+      "id": 2
     }
   ]
 }

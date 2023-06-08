@@ -97,6 +97,8 @@ b {
   width: 90%;
   margin: 30px auto 0;
   vertical-align: top;
+  border: 4px solid red;
+  background-color: black;
 }
 
 .character-form {
@@ -124,5 +126,87 @@ b {
 }
 
 .eachChar {
+  width: 100%;
+}
+
+.homeImg {
+  width: auto;
+  height: 40vh;
+  margin: 100px;
+}
+
+.centerButton {
+  text-align: center;
+  margin-right:18%;
+  
+}
+
+.homePage {
+  text-align: center;
+  background-color: #fdd226;
+  color: black;
+}
+
+.chuckSelect {
+  height: 60px;
+  width: 120px;
+}
+
+.chuckSelect button {
+  color: white;
+  background-color: #42f471;
+}
+
+.chuck {
+  height: 100vh;
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+.norris {
+  width: 80%;
+}
+
+.chuck button {
+  height: 150px;
+  position: absolute;
+  top: 600px;
+  left: 120px;
+  background-color: white;
+  color: black;
+}
+
+.chuckFit {
+  height: 600px;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background: blanchedalmond;
+}
+ 
+.Navbar li,
+.Navbar a {
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: black;
+}
+
+.sentence {
+  width: 100%;
+}
+
+.inputazo {
+  box-sizing: content-box;
   width: 100%;
 }

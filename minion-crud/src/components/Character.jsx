@@ -8,15 +8,15 @@ function Character({
   occupation,
   weapon,
   cartoon,
-  handleEdit,
   handleDelete,
+  handleEdit,
 }) {
   const [editing, setEditing] = useState(false);
   const [data, setData] = useState({
-    name: "",
-    occupation: "",
-    weapon: "",
-    cartoon: false,
+    name,
+    occupation,
+    weapon,
+    cartoon,
   });
 
   const handleSubmit = async (e) => {
@@ -54,24 +54,14 @@ function Character({
             value={data.weapon}
             onChange={handleChange}
           ></input>
-          <input
-            type="text"
-            name="image"
-            value={data.image}
-            onChange={handleChange}
-          ></input>
           <select
             type="text"
             name="cartoon"
             value={data.cartoon}
             onChange={handleChange}
           >
-            <option value={cartoon} onChange={handleChange}>
-              True
-            </option>
-            <option value={cartoon} onChange={handleChange}>
-              False
-            </option>
+            <option>True</option>
+            <option>False</option>
           </select>
           <button type="submit">Editar</button>
         </form>
